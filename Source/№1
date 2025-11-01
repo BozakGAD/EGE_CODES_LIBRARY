@@ -1,0 +1,9 @@
+from itertools import *
+
+x = "EH HG GC CF FA AE ED DF DB BH BG".split()
+y = "23 168 158 578 347 27 456 234".split()
+
+print(*range(1,9))
+for p in permutations("ABCDEFGH"):
+    if all(str(p.index(b) + 1) in y[p.index(a)] for a, b in x):
+        print(*p)
