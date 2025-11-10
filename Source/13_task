@@ -1,0 +1,54 @@
+from ipaddress import *
+ip_add = ip_address('113.191.169.34')
+for mask in range(33):
+    try:
+        ip_net = ip_network(f'113.191.160.0/{mask}')
+        if ip_add in ip_net:
+            print(ip_net.netmask)
+    except:
+        continue
+
+-------------------------------------------------------------------------
+
+from ipaddress import *
+ip_add = ip_address('113.191.169.34')
+for mask in range(33):
+    try:
+        ip_net = ip_network(f'113.191.160.0/{mask}')
+        if ip_add in ip_net:
+            print(bin(int(ip_net.netmask)).count('1'))
+    except:
+        continue
+
+-------------------------------------------------------------------------
+
+from ipaddress import *
+ip_net = ip_network('142.108.56.118/255.255.255.240', False)
+k = 0
+for ip_ad in ip_net:
+    if bin(int(ip_ad))[-16:].count('1') > bin(int(ip_ad))[:-16].count('1'):
+        k += 1
+print(k)
+
+-------------------------------------------------------------------------
+
+from ipaddress import *
+ip_net = ip_network('252.67.33.87/255.252.0.0', False)
+k = 0
+for ip_ad in ip_net:
+    if bin(int(ip_ad))[-16:].count('1') > 2*bin(int(ip_ad))[:-16].count('1'):
+        k += 1
+print(k)
+
+-------------------------------------------------------------------------
+
+from ipaddress import *
+for i in range(9):
+    A = i*'1' + 8*'0'
+    A = int(A[:8], 2)
+    ip_net = ip_network(f'255.211.33.160/255.255.{A}.0', False)
+    for ip_ad in ip_net:
+        if (bin(int(ip_ad))[-16:].count('1')) <= (bin(int(ip_ad))[:-16].count('1')) == False:
+            break
+    else:
+        print(A)
