@@ -1,0 +1,118 @@
+for n in range(4, 10000):
+    s = '5' + n * '2'
+    while '52' in s:
+        if '52' in s:
+            s = s.replace('52', '11', 1)
+        if '2222' in s:
+            s = s.replace('2222', '5', 1)
+        if '1122' in s:
+            s = s.replace('1122', '25', 1)
+    if sum(map(int, s)) == 64:
+        print(n)
+
+--------------------------------------------------------------------------------
+
+s = '1' * 101
+while '111' in s:
+    s = s.replace('111', '22', 1)
+    s = s.replace('222', '11', 1)
+print(s)
+
+--------------------------------------------------------------------------------
+
+s = '1' * 81
+while ('1111' in s) or ('88888' in s):
+    if '1111' in s:
+        s = s.replace('1111', '888', 1)
+    else:
+        s = s.replace('88888', '888', 1)
+print(s)
+
+--------------------------------------------------------------------------------
+
+raz = set()
+for i in range(2, 1000):
+    s = i * '8'
+    while '555' in s or '888' in s:
+        s = s.replace('555', '8', 1)
+        s = s.replace('888', '55', 1)
+    raz.add(s)
+print(len(raz))
+
+--------------------------------------------------------------------------------
+
+s = '5' * 200
+while '555' in s or '333' in s:
+    if '555' in s:
+        s = s.replace('555', '3', 1)
+    else:
+        s = s.replace('333', '5', 1)
+print(sum([int(i) for i in s]))
+
+--------------------------------------------------------------------------------
+
+for i in range(301, 1000):
+    s = i * '5'
+    while '555' in s or '888' in s:
+        s = s.replace('555', '8', 1)
+        s = s.replace('888', '55', 1)
+    if s.count('5') == s.count('8') == 1:
+        print(i)
+        break
+
+--------------------------------------------------------------------------------
+
+max1 = 0
+for i in range(185, 1000):
+    s = i * '1'
+    while '1111' in s:
+        s = s.replace('1111', '2', 1)
+        s = s.replace('22', '11', 1)
+    if s.count('1') > max1:
+        max1 = s.count('1')
+        min_i = i
+print(min_i)
+
+--------------------------------------------------------------------------------
+
+for a in range(1, 40):
+    for b in range(1, 40):
+        for c in range(1, 40):
+            s = '0' + a * '1' + b * '2' + c * '3' + '0'
+            while '00' not in s:
+                s = s.replace('01', '210', 1)
+                s = s.replace('02', '3101', 1)
+                s = s.replace('03', '2012', 1)
+            if s.count('1') == 111 and s.count('2') == 101 and s.count('3') == 35:
+                print(a + b + c + 2)
+                break
+
+--------------------------------------------------------------------------------
+
+s = '0' + '1' * 12 + '2' * 15 + '3' * 17
+while '01' in s or '02' in s or '03' in s:
+    s = s.replace('01', '103', 1)
+    s = s.replace('02', '10', 1)
+    s = s.replace('03', '210', 1)
+print(s.count('2'))
+
+--------------------------------------------------------------------------------
+
+def prost(x):
+    for d in range(2, round(x ** 0.5) + 1):
+        if x % d == 0:
+            return False
+    return True
+
+
+for n in range(1, 100):
+    s = '9' + n * '1' + n * '2'
+    while '91' in s or '92' in s:
+        if '91' in s:
+            s = s.replace('91', '39', 1)
+        if '92' in s:
+            s = s.replace('92', '59', 1)
+    summa = sum([int(i) for i in s])
+    if prost(summa) and summa in range(100, 1000):
+        print(n)
+        break
