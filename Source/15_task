@@ -1,0 +1,46 @@
+for a in range(1000):
+     for x in range(1000) 
+	for y in range(1000)):
+		if all((x + 2 * y < a) or (y > x) or (x > 60)
+        	print(a)
+        	break
+
+-------------------------------------------------------------------------
+
+for a in range(1000):
+    for x in range(1000):
+        if ((x & 105 == 0) <= ((x & 58 != 0) <= (x & a != 0))) == False:
+            break
+    else:
+        print(a)
+        
+-------------------------------------------------------------------------
+
+def Del(n, m):
+    return n % m == 0
+for a in range(1, 1000):
+    for x in range(1, 1000):
+        if ((not(Del(x, a))) <= (Del(x, 6) <= (not(Del(x, 9))))) == False:
+            break
+    else:
+        print(a)
+
+-------------------------------------------------------------------------
+
+D = list(range(17, 58+1))
+C = list(range(29, 80+1))
+a = []
+for x in range(1, 100):
+    if ((x in D) <= (((not(x in C)) and (not(x in a))) <= (not(x in D)))) == False:
+        a.append(x)
+print(a)
+
+-------------------------------------------------------------------------
+
+P = list(range(3, 13+1))
+Q = list(range(12, 22+1))
+a = list(range(1, 100))
+for x in range(1, 100):
+    if (((x in a) <= (x in P)) or (x in Q)) == False:
+        a.remove(x)
+print(a)
