@@ -16,3 +16,25 @@ f = open("файл")
 s = f.readline()
 a = s.split("XZZY")
 print(len(max(a, key=len)) + 6)
+
+-----------------------------------------------------------------------
+
+print(a.index(max(a, key=len)))
+print(len(a))
+
+ЛИБО ЗАМЕНОЙ:
+f = open("файл")
+s = f.readline()
+s = s.replace("XZZY", "XZZ ZZY")
+a = s.split("XZZY")
+print(len(max(a, key=len)))
+
+-----------------------------------------------------------------------
+
+f = open("файл")
+s = f.readline()
+s = s.replace("G", " ")
+s = s.replace("W", " ")
+s = s.replace("P", " ")
+a = s.split()
+print(len(max(a, key=len)))
