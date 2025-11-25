@@ -38,3 +38,20 @@ s = s.replace("W", " ")
 s = s.replace("P", " ")
 a = s.split()
 print(len(max(a, key=len)))
+
+-----------------------------------------------------------------------
+
+f = open("файл")
+s = f.readline()
+s = s.replace("ad", "a d")
+s = s.replace("da", "d a")
+a = s.split()
+print(len(max(a, key=len)))
+
+-----------------------------------------------------------------------
+
+f = open("файл")
+s = f.readline()
+s = s.replace("PP", "P P")
+a = s.split()
+print(len(max(a, key=len)))
