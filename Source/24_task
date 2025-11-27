@@ -75,3 +75,30 @@ s = s.replace("C", "B")
 for i in range(1, 10000):
     if i*"BBA" in s:
         print(i*3)
+
+-----------------------------------------------------------------------
+
+f = open("файл")
+s = f.readline()
+s = s.replace("N", "*")
+s = s.replace("O", "*")
+s = s.replace("P", "*")
+s = s.replace("**", "* *")
+# 2 раз делать замену в случае, если по пизде пошла первая замена
+s = s.replace("**", "* *")
+a = s.split()
+print(len(max(a, key=len)))
+
+-----------------------------------------------------------------------
+
+f = open("24_58329.txt")
+s = f.readline()
+cnt = 1
+max_cnt = 1
+for i in range(len(s) - 1):
+    if int(s[i-2]) + int(s[i-1]) > int(s[i]):
+        cnt += 1
+    else:
+        cnt = 1
+    max_cnt = max(cnt, max_cnt)
+print(max_cnt)
