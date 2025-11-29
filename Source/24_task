@@ -136,3 +136,17 @@ for r in range(len(s)):
         l += 1
     if kx==1 and ky==1: m = max(m, r-l+1)
 print(m)
+
+-----------------------------------------------------------------------
+
+f = open("файл")
+s = f.readline()
+l = 0
+m = 0
+
+for r in range(len(s)):
+    if s[r] == "A" or s[r] == "D":
+        if s[l] == "A" and s[r] == "D" or s[l] == "D" and s[r] == "A":
+            m = max(m, r-l+1)
+        l = r
+print(m)
