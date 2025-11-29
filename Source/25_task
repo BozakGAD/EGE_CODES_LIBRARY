@@ -1,0 +1,14 @@
+from fnmatch import *
+for x in range(317, 10**8, 317):
+    if fnmatch(str(x), "12??1*56"):
+        print(x, x // 317)
+
+--------------------------------------------------------------------------
+
+for i in range(174457, 174505+1):
+    deliteli = []
+    for j in range(2, i):
+        if i % j == 0:
+            deliteli.append(j)
+    if len(deliteli) == 2:
+        print(deliteli)
